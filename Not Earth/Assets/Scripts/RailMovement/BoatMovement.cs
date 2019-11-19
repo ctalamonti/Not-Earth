@@ -5,21 +5,32 @@ using UnityEngine;
 public class BoatMovement : MonoBehaviour
 {
     
-    [Tooltip("The list of waypoints for the boat to hit as it travles")]
+    [Tooltip("The list of waypoints for the boat to hit as it travles. The first waypoint is the starting location")]
     public List<GameObject> waypoints = new List<GameObject>();
 
-    [Tooltip("How fast to move from waypoint to waypoint. Can be adjusted")]
+    [Tooltip("How fast to move from waypoint to waypoint in units per second. Can be adjusted")]
     public float moveTime = 10;
-    
+
     /// <summary>
-    /// The curren target waypoint
+    /// The start time for the slerp between waypoints
     /// </summary>
-    private GameObject currentWaypoint;
+    private float startTime;
     
     /// <summary>
-    /// The number of waypoints the boat has hit
+    /// The current target waypoint
+    /// </summary>
+    public GameObject currentWaypoint;
+    
+    /// <summary>
+    /// The number of waypoints the boat has hit.
     /// </summary>
     private int waypointsHit = 0;
+
+    /// <summary>
+    /// The total length between the two waypoints being moved between
+    /// </summary>
+    private float totalLength;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -31,19 +42,34 @@ public class BoatMovement : MonoBehaviour
     {
         if (currentWaypoint == null)
         {
-            currentWaypoint = waypoints[waypointsHit];
+            NextWaypoint();
         }
 
-        transform.position = Vector3.Slerp(transform.position,
-            currentWaypoint.transform.position, moveTime);
+        // How far the boat has already travelled
+        float distCovered = (Time.time - startTime) * moveTime;
+        
+        // The fraction of the journey completed
+        float fracComplete = distCovered / totalLength;
+
+        // Interpolates where to move the object, and moves it
+        transform.position = Vector3.Lerp(waypoints[waypointsHit - 1].transform.position,currentWaypoint.transform.position, fracComplete);
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("waypoint"))
         {
-            ++waypointsHit;
-            currentWaypoint = waypoints[waypointsHit];
+            Debug.Log("Hit waypoint");
+            NextWaypoint();
         }
+    }
+
+    void NextWaypoint()
+    {
+        startTime = Time.time;
+        ++waypointsHit;
+        currentWaypoint = waypoints[waypointsHit];
+        totalLength = Vector3.Distance(waypoints[waypointsHit - 1].transform.position,
+            currentWaypoint.transform.position);
     }
 }
