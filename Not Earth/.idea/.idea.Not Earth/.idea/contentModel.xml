@@ -12,6 +12,9 @@
             <e p="BoatMovement.cs" t="Include" />
           </e>
           <e p="SimpleCameraController.cs" t="Include" />
+          <e p="Snapshots" t="Include">
+            <e p="SnapshotUploader.cs" t="Include" />
+          </e>
         </e>
         <e p="SteamVR" t="Include">
           <e p="Editor" t="Include">
@@ -297,6 +300,18 @@
             <e p="SteamVR_Windows_Editor_Helper.cs" t="Include" />
             <e p="SteamVR_Windows_EditorHelper.asmdef" t="Include" />
           </e>
+        </e>
+        <e p="SteamVR_Input" t="Include">
+          <e p="ActionSetClasses" t="Include">
+            <e p="SteamVR_Input_ActionSet_buggy.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSet_default.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSet_mixedreality.cs" t="Include" />
+            <e p="SteamVR_Input_ActionSet_platformer.cs" t="Include" />
+          </e>
+          <e p="SteamVR_Actions.asmdef" t="Include" />
+          <e p="SteamVR_Input_Actions.cs" t="Include" />
+          <e p="SteamVR_Input_ActionSets.cs" t="Include" />
+          <e p="SteamVR_Input_Initialization.cs" t="Include" />
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">
@@ -871,6 +886,7 @@
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="SteamVR.csproj" t="IncludeRecursive" />
+      <e p="SteamVR_Actions.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Editor.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Input_Editor.csproj" t="IncludeRecursive" />
       <e p="SteamVR_Windows_EditorHelper.csproj" t="IncludeRecursive" />
