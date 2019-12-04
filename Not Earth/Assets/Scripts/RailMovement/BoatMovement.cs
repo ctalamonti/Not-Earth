@@ -30,16 +30,17 @@ public class BoatMovement : MonoBehaviour
     /// The total length between the two waypoints being moved between
     /// </summary>
     private float totalLength;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
+    /// <summary>
+    /// Is the object moving
+    /// </summary>
+    public static bool isMoving = false;
+
 
     // Update is called once per frame
     void LateUpdate()
     {
+        // Update the current waypoint the straightline object is moving to
         if (currentWaypoint == null)
         {
             NextWaypoint();
@@ -51,12 +52,22 @@ public class BoatMovement : MonoBehaviour
         // The fraction of the journey completed
         float fracComplete = distCovered / totalLength;
 
-        // Interpolates where to move the object, and moves it
-        transform.position = Vector3.Lerp(waypoints[waypointsHit - 1].transform.position,currentWaypoint.transform.position, fracComplete);
+        if (isMoving)
+        {
+            // Interpolates where to move the object, and moves it
+            transform.position = Vector3.Lerp(
+                waypoints[waypointsHit - 1].transform.position,
+                currentWaypoint.transform.position, fracComplete);
+        }
     }
 
+    /// <summary>
+    /// Sets the current waypoint once it has been reached
+    /// </summary>
+    /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
+        // Verify the object collided with a waypoint
         if (other.CompareTag("waypoint"))
         {
             Debug.Log("Hit waypoint");
@@ -64,11 +75,16 @@ public class BoatMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get the next waypoint, calculate the distance to it, and increment the waypoints hit
+    /// </summary>
     void NextWaypoint()
     {
         startTime = Time.time;
         ++waypointsHit;
-        currentWaypoint = waypoints[waypointsHit];
+        if (waypointsHit < waypoints.Count) {
+            currentWaypoint = waypoints[waypointsHit];
+        }
         totalLength = Vector3.Distance(waypoints[waypointsHit - 1].transform.position,
             currentWaypoint.transform.position);
     }

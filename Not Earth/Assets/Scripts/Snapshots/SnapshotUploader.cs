@@ -1,21 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityGoogleDrive;
+using UnityGoogleDrive.Data;
 
 public class SnapshotUploader : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    //TeamDrive drive = new TeamDrive();
+    
+    void Start()
     {
-        if (Input.GetKeyDown("space"))
+        //TODO: Get this working with team drives.
+        /*
+        GoogleDriveTeamDrives.ListRequest request = GoogleDriveTeamDrives.List();
+        var data = request.Send();
+        TeamDriveList drives =  data.GoogleDriveRequest.ResponseData;
+        foreach (var drive in drives.TeamDrives)
         {
-            Debug.Log("Attempting upload");
-            byte[] bytes = new byte[10];
-            var file = new UnityGoogleDrive.Data.File { Name = "Screenshot.png", Content = bytes };
-            Debug.Log("Sending request");
-            GoogleDriveFiles.Create(file).Send();
-            Debug.Log("Request sent");
+            Debug.Log("Drive Name: " + drive.Name);
+            Debug.Log("Drive ID: " + drive.Id);
+            Debug.Log("-----------------------");
         }
+        */
+    }
+
+    public static void UploadScreenshot(byte[] toUpload)
+    {            
+        Debug.Log("Attempting upload");
+        var file = new UnityGoogleDrive.Data.File { Name = "Screenshot.png", Content = toUpload };
+        Debug.Log("Sending request");
+        GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(file);
+        request.SupportsTeamDrives = true;
+        request.Send();
+        Debug.Log("Request sent");
+        
     }
 }

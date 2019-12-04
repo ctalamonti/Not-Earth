@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1054522600342700}
+  m_IsPrefabParent: 1
+--- !u!1 &1054522600342700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4929284723867544}
+  - component: {fileID: 114421283962694778}
+  m_Layer: 0
+  m_Name: OnEditorScreenshot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4929284723867544
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054522600342700}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114421283962694778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1054522600342700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a97182c5ebdc8841a797a0d04e5e030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SaveDirectory: 0
+  m_SaveFormat: 1
+  m_OptionalSubFolder: 
+  m_BurstCount: 10
+  m_BurstInterval: 0.5
+  m_IsFullscreen: 1
+  m_ScreenPosition: {x: 0, y: 0}
+  m_Width: 512
+  m_Height: 512
+  m_SelectedCamera: {fileID: 0}
+  m_AllCameras:
+  - {fileID: 0}
+  m_RenderMode: 1
+  m_AntiAliasingLevel: 4
+  m_ImageScale: 1
+  m_CaptureSourceIndex: 0
+  m_BurstProgress: 0 / 0
+  m_BurstState: Stopped
+  m_SavePath: C:/Users/Studio/AppData/LocalLow/SwanDev/ImageToolbox\2019-01-26-23-12-40-186.png

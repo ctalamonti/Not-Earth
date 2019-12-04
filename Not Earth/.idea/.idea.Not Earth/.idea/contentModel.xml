@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Auri\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Auri\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Not Earth.1575890044.00" t="ExcludeRecursive" />
-    <e p="F:\Bradley\2019-2020\Not-Earth\Not Earth" t="IncludeRecursive">
+    <e p="C:\Users\swift\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\swift\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Not Earth.45350355.00" t="ExcludeRecursive" />
+    <e p="C:\Users\swift\Documents\GitHub\Not-Earth\Not Earth" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="GameManager.cs" t="Include" />
           <e p="RailMovement" t="Include">
             <e p="BoatMovement.cs" t="Include" />
           </e>
@@ -312,6 +313,31 @@
           <e p="SteamVR_Input_Actions.cs" t="Include" />
           <e p="SteamVR_Input_ActionSets.cs" t="Include" />
           <e p="SteamVR_Input_Initialization.cs" t="Include" />
+        </e>
+        <e p="SWAN Dev" t="Include">
+          <e p="Common" t="Include">
+            <e p="DCanvasScalerHandler.cs" t="Include" />
+            <e p="DImageDisplayHandler.cs" t="Include" />
+            <e p="FilePathName.cs" t="Include" />
+            <e p="OnEnableTrigger.cs" t="Include" />
+            <e p="SDemoAnimation.cs" t="Include" />
+            <e p="SDemoControl.cs" t="Include" />
+            <e p="SelfAnimation.cs" t="Include" />
+            <e p="SelfCountdown.cs" t="Include" />
+          </e>
+          <e p="ScreenshotHelper" t="Include">
+            <e p="OnEditor" t="Include">
+              <e p="OnEditorScreenshot.cs" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="CameraOnRender.cs" t="Include" />
+              <e p="CameraOnUpdateRender.cs" t="Include" />
+              <e p="CameraRenderBase.cs" t="Include" />
+              <e p="MinimumDemo.cs" t="Include" />
+              <e p="ScreenshotDemo.cs" t="Include" />
+              <e p="ScreenshotHelper.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="TutorialInfo" t="Include">
           <e p="Scripts" t="Include">
