@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRTK;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,12 @@ public class GameManager : MonoBehaviour
     [Tooltip("The camera the player is using to look around")]
     public Camera camera;
 
+    [Tooltip("Reference to the left hand controller events")]
+    public VRTK_ControllerEvents leftEvents;
+
+    [Tooltip("Reference to the right hand controller events")]
+    public VRTK_ControllerEvents rightEvents;
+    
     // Update is called once per frame
     void Update()
     {
@@ -22,8 +29,8 @@ public class GameManager : MonoBehaviour
         {
             BoatMovement.isMoving = !BoatMovement.isMoving;
         }
-
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        
+        if (leftEvents.triggerClicked || rightEvents.triggerClicked)
         {
             ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
             ScreenshotHelper.iCaptureWithCamera(camera);

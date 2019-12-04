@@ -25,6 +25,10 @@ public class SnapshotUploader : MonoBehaviour
         */
     }
 
+    /// <summary>
+    /// Takes an image as bytes and uploads it to google drive
+    /// </summary>
+    /// <param name="toUpload">The bytes to upload</param>
     public static void UploadScreenshot(byte[] toUpload)
     {            
         Debug.Log("Attempting upload");
