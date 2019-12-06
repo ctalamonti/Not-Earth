@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             BoatMovement.isMoving = !BoatMovement.isMoving;
         }
         
-        if (leftEvents.triggerClicked || rightEvents.triggerClicked)
+        if (leftEvents.triggerClicked || rightEvents.triggerClicked || Input.GetKeyDown(KeyCode.KeypadEnter))
         {
             ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
             ScreenshotHelper.iCaptureWithCamera(camera);
