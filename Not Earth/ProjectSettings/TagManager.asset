@@ -9,6 +9,7 @@ TagManager:
   - projectile
   - TeleportIgnore
   - waypoint
+  - event1
   layers:
   - Default
   - TransparentFX

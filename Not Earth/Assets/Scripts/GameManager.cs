@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Reference to the right hand controller events")]
     public VRTK_ControllerEvents rightEvents;
+
     
     // Update is called once per frame
     void Update()
