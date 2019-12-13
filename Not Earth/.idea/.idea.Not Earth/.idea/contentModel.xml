@@ -7,8 +7,19 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Player.cs" t="Include" />
+        <e p="Samples" t="Include">
+          <e p="Terrain Tools" t="Include">
+            <e p="0.1.0-preview" t="Include">
+              <e p="Terrain Assets" t="Include">
+                <e p="ThirdPartyNotices.txt" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
+          <e p="leeskmovement.cs" t="Include" />
           <e p="RailMovement" t="Include">
             <e p="BoatMovement.cs" t="Include" />
           </e>
@@ -16,6 +27,7 @@
           <e p="Snapshots" t="Include">
             <e p="SnapshotUploader.cs" t="Include" />
           </e>
+          <e p="triggertest.cs" t="Include" />
         </e>
         <e p="SteamVR" t="Include">
           <e p="Editor" t="Include">

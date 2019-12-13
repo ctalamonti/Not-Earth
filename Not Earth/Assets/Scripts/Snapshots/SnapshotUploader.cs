@@ -37,10 +37,12 @@ public class SnapshotUploader : MonoBehaviour
         Debug.Log("Sending request");
         file.Parents = new List<string>();
         file.Parents.Add("1B_-aSw3zxNoJuuH5UjvpD0nwoZLd5x5U");
+        //file.Parents.Add("1HRTjvSf6VUFKirgfDNa-ZL5B2aFpHMaT");
         GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(file);
         request.SupportsTeamDrives = true;
         request.Send();
         Debug.Log("Request sent");
-        
+        ++screenshotCount;
+
     }
 }
