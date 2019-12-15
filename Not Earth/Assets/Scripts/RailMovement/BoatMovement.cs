@@ -80,11 +80,14 @@ public class BoatMovement : MonoBehaviour
     /// </summary>
     void NextWaypoint()
     {
+        // Set the start time of the travel
         startTime = Time.time;
         ++waypointsHit;
+        // If there is a next waypoint, set the current waypoint to it
         if (waypointsHit < waypoints.Count) {
             currentWaypoint = waypoints[waypointsHit];
         }
+        // Calculate how far the target is from the current position
         totalLength = Vector3.Distance(waypoints[waypointsHit - 1].transform.position,
             currentWaypoint.transform.position);
     }
