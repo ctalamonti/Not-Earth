@@ -5,6 +5,7 @@ using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityGoogleDrive;
 using UnityGoogleDrive.Data;
+ 
 
 public class SnapshotUploader : MonoBehaviour
 {
@@ -44,5 +45,24 @@ public class SnapshotUploader : MonoBehaviour
         Debug.Log("Request sent");
         ++screenshotCount;
 
+    }
+
+    /// <summary>
+    /// Creates a folder and gives us a folder name
+    /// </summary>
+    /// <param name="folderName">making the name for the folder</param>
+    /// <returns>folder id</returns>
+    public static string CreateFolder(string folderName)
+    {
+        var fileMetadata = new UnityGoogleDrive.Data.File() // Creates file
+        {
+            Name = folderName // sets up folder name
+
+        };
+        fileMetadata.MimeType = "application/vnd.google-apps.folder"; // giving it folder type
+
+        GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(fileMetadata);
+        var folder = request.Send();    // sending folder to drive
+        return request.RequestData.Id;  // requesting id
     }
 }

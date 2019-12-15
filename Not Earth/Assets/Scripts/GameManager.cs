@@ -37,6 +37,11 @@ public class GameManager : MonoBehaviour
             ScreenshotHelper.iCaptureWithCamera(camera);
         }
     }
-    
-    
+    private void Awake()
+    {
+       folder = SnapshotUploader.CreateFolder("Photos");
+
+    }
+
+    public string folder;
 }
