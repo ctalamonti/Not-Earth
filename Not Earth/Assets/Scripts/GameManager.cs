@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-using VRTK;
 
 public class GameManager : MonoBehaviour
 {
