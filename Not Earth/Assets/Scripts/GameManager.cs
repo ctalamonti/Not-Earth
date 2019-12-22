@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-using VRTK;
 
 public class GameManager : MonoBehaviour
 {
-
+    public string folder;
     [Tooltip("The camera the player is using to look around")]
     public Camera camera;
 
@@ -36,9 +35,10 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-       folder = SnapshotUploader.CreateFolder("Photos");
+        SnapshotUploader.CreateFolder("Photos");
+        
 
     }
 
-    public string folder;
+   
 }

@@ -37,14 +37,14 @@ public class SnapshotUploader : MonoBehaviour
     /// </summary>
     /// <param name="toUpload">The bytes to upload</param>
     public static void UploadScreenshot(byte[] toUpload)
-    {            
+    {    
         Debug.Log("Attempting upload");
         // Creates the file object to be uploaded
         var file = new UnityGoogleDrive.Data.File { Name = "Screenshot" + screenshotCount + ".png", Content = toUpload };
         Debug.Log("Sending request");
         // Sets the folder the file needs to go into
         file.Parents = new List<string>();
-        file.Parents.Add("1B_-aSw3zxNoJuuH5UjvpD0nwoZLd5x5U"); // Change this ID to change the folder
+        file.Parents.Add("1B_ - aSw3zxNoJuuH5UjvpD0nwoZLd5x5U");// Change this ID to change the folder
         // Create the request to send to Google Drive
         GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(file);
         // Let this work with team drives plox
@@ -62,17 +62,21 @@ public class SnapshotUploader : MonoBehaviour
     /// </summary>
     /// <param name="folderName">making the name for the folder</param>
     /// <returns>folder id</returns>
-    public static string CreateFolder(string folderName)
+    public static void  CreateFolder(string folderName)
     {
         var fileMetadata = new UnityGoogleDrive.Data.File() // Creates file
         {
-            Name = folderName // sets up folder name
+            Name = folderName// sets up folder name
 
         };
+        
+        fileMetadata.Parents = new List<string>();
+        fileMetadata.Parents.Add("1B_-aSw3zxNoJuuH5UjvpD0nwoZLd5x5U");// Change this ID to change the folder
         fileMetadata.MimeType = "application/vnd.google-apps.folder"; // giving it folder type
 
         GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(fileMetadata);
-        var folder = request.Send();    // sending folder to drive
-        return request.RequestData.Id;  // requesting id
+        var folder = request.Send();
+       // Debug.Log(folder.GoogleDriveRequest.);// sending folder to drive
+        //return folder.GoogleDriveRequest.ResponseData.Id;  // requesting id
     }
 }
