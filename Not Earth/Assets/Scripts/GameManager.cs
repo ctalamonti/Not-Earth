@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     }
     private void Awake()
     {
-        SnapshotUploader.CreateFolder("Photos");
+        //SnapshotUploader.CreateFolder("Photos");
 
         // Sets what will happen when the screenshot is taken
         ScreenshotHelper.iSetMainOnCapturedCallback((Texture2D texture2d) => {
