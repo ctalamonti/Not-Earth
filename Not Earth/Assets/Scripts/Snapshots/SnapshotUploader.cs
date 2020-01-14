@@ -37,7 +37,9 @@ public class SnapshotUploader : MonoBehaviour
     /// </summary>
     /// <param name="toUpload">The bytes to upload</param>
     public static void UploadScreenshot(byte[] toUpload)
-    {    
+    {
+        // Prevent the first, grey screenshot form being uploaded
+        if (screenshotCount == 0) return;
         Debug.Log("Attempting upload");
         // Creates the file object to be uploaded
         var file = new UnityGoogleDrive.Data.File { Name = "Screenshot" + screenshotCount + ".png", Content = toUpload };
