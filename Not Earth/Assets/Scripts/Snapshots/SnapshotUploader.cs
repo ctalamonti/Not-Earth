@@ -44,7 +44,7 @@ public class SnapshotUploader : MonoBehaviour
         Debug.Log("Sending request");
         // Sets the folder the file needs to go into
         file.Parents = new List<string>();
-        file.Parents.Add("1B_ - aSw3zxNoJuuH5UjvpD0nwoZLd5x5U");// Change this ID to change the folder
+        file.Parents.Add("188H2_KwT6oAUNxiCj7jhhlohMqgiCE2E");// Change this ID to change the folder
         // Create the request to send to Google Drive
         GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(file);
         // Let this work with team drives plox
@@ -71,7 +71,7 @@ public class SnapshotUploader : MonoBehaviour
         };
         
         fileMetadata.Parents = new List<string>();
-        fileMetadata.Parents.Add("1B_-aSw3zxNoJuuH5UjvpD0nwoZLd5x5U");// Change this ID to change the folder
+        fileMetadata.Parents.Add("188H2_KwT6oAUNxiCj7jhhlohMqgiCE2E");// Change this ID to change the folder
         fileMetadata.MimeType = "application/vnd.google-apps.folder"; // giving it folder type
 
         GoogleDriveFiles.CreateRequest request = new GoogleDriveFiles.CreateRequest(fileMetadata);

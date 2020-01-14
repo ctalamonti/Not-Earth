@@ -12,32 +12,43 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Sets what will happen when the screenshot is taken
-        ScreenshotHelper.iSetMainOnCapturedCallback((Texture2D texture2d)=>{
-            FilePathName fpn = new FilePathName();
-            string fileName = fpn.SaveTextureAs(texture2d, FilePathName.AppPath.PersistentDataPath, "Snapshots", false);
-            byte[] bytes = fpn.ReadFileToBytes(fileName);
-            SnapshotUploader.UploadScreenshot(bytes);
-        });
-        
+      
         // Starts or stops boat movement
         if (Input.GetKeyDown(KeyCode.Space))
         {
             BoatMovement.isMoving = !BoatMovement.isMoving;
         }
-        
+
         // Takes the screenshot
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
-            ScreenshotHelper.iCaptureWithCamera(camera);
+            TakeScreenshot();
         }
     }
     private void Awake()
     {
         SnapshotUploader.CreateFolder("Photos");
-        
 
+        // Sets what will happen when the screenshot is taken
+        ScreenshotHelper.iSetMainOnCapturedCallback((Texture2D texture2d) => {
+            FilePathName fpn = new FilePathName();
+            string fileName = fpn.SaveTextureAs(texture2d, FilePathName.AppPath.PersistentDataPath, "Snapshots", false);
+            byte[] bytes = fpn.ReadFileToBytes(fileName);
+            SnapshotUploader.UploadScreenshot(bytes);
+        });
+
+    }
+
+    /// <summary>
+    /// Takes a screenshot
+    /// </summary>
+    public void TakeScreenshot()
+    {
+        Debug.Log("Taking Screenshot...");
+        // Sets the mode to use when capturing
+        ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
+        // Actually takes the screenshot
+        ScreenshotHelper.iCaptureWithCamera(camera);
     }
 
    
