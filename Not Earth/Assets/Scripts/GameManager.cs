@@ -6,8 +6,8 @@ using Valve.VR;
 public class GameManager : MonoBehaviour
 {
     public string folder;
-    [Tooltip("The camera the player is using to look around")]
-    public Camera camera;
+    [Tooltip("A camera chileded to the camera the player us using to look around")]
+    public Camera screenshotCamera;
 
     // Update is called once per frame
     void Update()
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         // Sets the mode to use when capturing
         ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
         // Actually takes the screenshot
-        ScreenshotHelper.iCaptureWithCamera(camera);
+        ScreenshotHelper.iCaptureWithCamera(screenshotCamera);
     }
 
    
