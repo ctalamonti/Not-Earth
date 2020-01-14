@@ -6,7 +6,7 @@ using Valve.VR;
 public class GameManager : MonoBehaviour
 {
     public string folder;
-    [Tooltip("A camera chileded to the camera the player us using to look around")]
+    [Tooltip("A camera chileded to the entire player object that follows the player camera")]
     public Camera screenshotCamera;
 
     // Update is called once per frame
@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
       
         // Starts or stops boat movement
+        // TODO: Get starting onto a timer/player controlled
         if (Input.GetKeyDown(KeyCode.Space))
         {
             BoatMovement.isMoving = !BoatMovement.isMoving;
@@ -29,14 +30,19 @@ public class GameManager : MonoBehaviour
     {
         //SnapshotUploader.CreateFolder("Photos");
 
+        // Takes a picture using the blank callback so the camera shown to the spectators and screenshotted from is correct.
+        // There is a better way to do this, but I do not know it. Just delete the obviously incorrect photo (it is just plain grey)
+        // TODO: Fix the upload of the wrong photo/find a way to set the default spectator camera
+        TakeScreenshot();
+
         // Sets what will happen when the screenshot is taken
         ScreenshotHelper.iSetMainOnCapturedCallback((Texture2D texture2d) => {
             FilePathName fpn = new FilePathName();
             string fileName = fpn.SaveTextureAs(texture2d, FilePathName.AppPath.PersistentDataPath, "Snapshots", false);
             byte[] bytes = fpn.ReadFileToBytes(fileName);
             SnapshotUploader.UploadScreenshot(bytes);
+            fpn.DeleteFile(fileName);
         });
-
     }
 
     /// <summary>
