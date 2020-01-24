@@ -5,8 +5,8 @@ using UnityEngine;
 public class BoatMovement : MonoBehaviour
 {
     
-    [Tooltip("The list of waypoints for the boat to hit as it travles. The first waypoint is the starting location")]
-    public List<GameObject> waypoints = new List<GameObject>();
+    [Tooltip("An array of waypoints for the boat to hit as it travles. The first waypoint is the starting location")]
+    public GameObject[] waypoints = new GameObject[21];
 
     [Tooltip("How fast to move from waypoint to waypoint in units per second. Can be adjusted")]
     public float moveTime = 10;
@@ -36,24 +36,26 @@ public class BoatMovement : MonoBehaviour
     /// </summary>
     public static bool isMoving = false;
 
+    private bool isMovingHold = false;
 
     // Update is called once per frame
     void LateUpdate()
     {
-        // Update the current waypoint the straightline object is moving to
-        if (currentWaypoint == null)
-        {
-            NextWaypoint();
-        }
-
-        // How far the boat has already travelled
-        float distCovered = (Time.time - startTime) * moveTime;
-        
-        // The fraction of the journey completed
-        float fracComplete = distCovered / totalLength;
-
         if (isMoving)
         {
+            // Update the current waypoint the straightline object is moving to
+            if (currentWaypoint == null)
+            {
+                NextWaypoint();
+            }
+
+            // How far the boat has already travelled
+            float distCovered = (Time.time - startTime) * moveTime;
+        
+            // The fraction of the journey completed
+            float fracComplete = distCovered / totalLength;
+
+
             // Interpolates where to move the object, and moves it
             transform.position = Vector3.Lerp(
                 waypoints[waypointsHit - 1].transform.position,
@@ -84,7 +86,7 @@ public class BoatMovement : MonoBehaviour
         startTime = Time.time;
         ++waypointsHit;
         // If there is a next waypoint, set the current waypoint to it
-        if (waypointsHit < waypoints.Count) {
+        if (waypointsHit < waypoints.Length) {
             currentWaypoint = waypoints[waypointsHit];
         }
         // Calculate how far the target is from the current position

@@ -14,10 +14,10 @@ public class SnapshotUploader : MonoBehaviour
     /// <summary>
     /// How many screenshots have been taken so far 
     /// </summary>
-    private static uint screenshotCount = 1;
+    private static int screenshotCount = -1;
     void Start()
     {
-        screenshotCount = 0;
+        screenshotCount = -1;
         //TODO: Get this working with team drives.
         /*
         GoogleDriveTeamDrives.ListRequest request = GoogleDriveTeamDrives.List();
@@ -38,6 +38,9 @@ public class SnapshotUploader : MonoBehaviour
     /// <param name="toUpload">The bytes to upload</param>
     public static void UploadScreenshot(byte[] toUpload)
     {
+        // Increment the screenshot count
+        ++screenshotCount;
+        Debug.Log("Screemshot Count: " + screenshotCount);
         // Prevent the first, grey screenshot form being uploaded
         if (screenshotCount == 0) return;
         Debug.Log("Attempting upload");
@@ -54,8 +57,6 @@ public class SnapshotUploader : MonoBehaviour
         // Send the request - upload the file
         request.Send();
         Debug.Log("Request sent");
-        // Increment the screenshot count
-        ++screenshotCount;
 
     }
 
