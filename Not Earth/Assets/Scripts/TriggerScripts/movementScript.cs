@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
-    
+    bool trigger = false;
    private Vector3 Movement;
    [Tooltip("This changes how the object moves in the scene")] public Vector3 settingMovement;
     private void Update()
     {
-        Movement = transform.position;
-        Moves(settingMovement);
-        transform.position = Movement;
+        
+        if (trigger)
+        {
+            
+            Movement = transform.position;
+            Moves(settingMovement);
+            transform.position = Movement;
+        }
     }
 
     void Moves(Vector3 directionsToMoveIn)
@@ -19,6 +24,13 @@ public class MovementScript : MonoBehaviour
         Movement.x += directionsToMoveIn.x * Time.deltaTime;
         Movement.y += directionsToMoveIn.y * Time.deltaTime;
         Movement.z += directionsToMoveIn.z * Time.deltaTime;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            trigger = true;
+        }
     }
 }
 
