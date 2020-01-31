@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2035111234}
-  m_IndirectSpecularColor: {r: 57.140537, g: 75.341545, b: 118.18081, a: 1}
+  m_IndirectSpecularColor: {r: 0.33371308, g: 0.38832948, b: 0.7805143, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -451,7 +451,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93237133}
-  m_LocalRotation: {x: 0.0036900134, y: 0.3687764, z: -0.0014639869, w: 0.92950964}
+  m_LocalRotation: {x: 0.003690013, y: 0.3687765, z: -0.0014639872, w: 0.92950964}
   m_LocalPosition: {x: 495.7021, y: -28, z: 620.7008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6035,7 +6035,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10000
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
@@ -6118,7 +6118,7 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
-  m_Intensity: 10000
+  m_Intensity: 1
   m_EnableSpotReflector: 0
   m_LuxAtDistance: 1
   m_InnerSpotPercent: 0
@@ -6930,7 +6930,7 @@ MonoBehaviour:
   - {fileID: 1771585266}
   - {fileID: 1744188878}
   - {fileID: 440529333}
-  moveTime: 20
+  moveTime: 5
   currentWaypoint: {fileID: 0}
 --- !u!65 &2095680970
 BoxCollider:
