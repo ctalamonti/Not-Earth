@@ -10,6 +10,7 @@ TagManager:
   - TeleportIgnore
   - waypoint
   - event1
+  - CameraTrigger
   layers:
   - Default
   - TransparentFX
