@@ -27,7 +27,7 @@ public class MovementScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if (other.CompareTag("Player")) 
         {
             trigger = true;
         }
