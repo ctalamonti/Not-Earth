@@ -9,10 +9,13 @@ public class GameManager : MonoBehaviour
     [Tooltip("A camera chileded to the entire player object that follows the player camera")]
     public Camera screenshotCamera;
 
+    [Tooltip("The amount 0 to 1 that the trigger needs to be pushed to take a screenshot")]
+    public float snapshotThreshold = 0.9f;
+    
     // Update is called once per frame
     void Update()
     {
-      
+        
         // Starts or stops boat movement
         // TODO: Get starting onto a timer/player controlled
         if (Input.GetKeyDown(KeyCode.Space))
@@ -20,8 +23,13 @@ public class GameManager : MonoBehaviour
             BoatMovement.isMoving = !BoatMovement.isMoving;
         }
 
+        // Sets a bool if the triggers are pushed down far enough
+        bool triggerPushed =
+            (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > snapshotThreshold) ||
+            (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > snapshotThreshold);
+
         // Takes the screenshot
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || triggerPushed)
         {
             TakeScreenshot();
         }
@@ -35,6 +43,8 @@ public class GameManager : MonoBehaviour
         // TODO: Fix the upload of the wrong photo/find a way to set the default spectator camera
         TakeScreenshot();
 
+        screenshotCamera.gameObject.SetActive(false);
+        
         // Sets what will happen when the screenshot is taken
         ScreenshotHelper.iSetMainOnCapturedCallback((Texture2D texture2d) => {
             FilePathName fpn = new FilePathName();
@@ -50,11 +60,13 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void TakeScreenshot()
     {
+        screenshotCamera.gameObject.SetActive(true);
         Debug.Log("Taking Screenshot...");
         // Sets the mode to use when capturing
         ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
         // Actually takes the screenshot
         ScreenshotHelper.iCaptureWithCamera(screenshotCamera);
+        screenshotCamera.gameObject.SetActive(false);
     }
 
    
