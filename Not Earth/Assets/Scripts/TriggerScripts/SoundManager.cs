@@ -12,10 +12,12 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public AudioClip[] musicClips = new AudioClip[0];
     private void Awake()
     {
+        Debug.Log("something");
         if (instance == null)
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
+        Debug.Log("somethingeslse");
 
         DontDestroyOnLoad(gameObject);
 
@@ -30,6 +32,11 @@ public class SoundManager : MonoBehaviour
     public void SetClip(int audioSourceTrigger)
     {
         audioSource.clip = musicClips[audioSourceTrigger];
+    }
+
+    public void PlaySound(Vector3 location)
+    {
+        AudioSource.PlayClipAtPoint(audioSource.clip, location);
     }
 
     
