@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64797926, g: 0.3427009, b: 0.20907313, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.012196902
+      value: 0.008689908
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -379,11 +379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.053320806
+      value: 0.056184217
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.15260345
+      value: -0.15260348
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_RootOrder
@@ -1611,20 +1611,6 @@ MonoBehaviour:
   folder: 
   screenshotCamera: {fileID: 644559164}
   snapshotThreshold: 0.9
---- !u!114 &399378610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399378606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 582b174e214cf4fc6a9b02497a840ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  musicClips: []
 --- !u!114 &399378611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4503,6 +4489,7 @@ GameObject:
   - component: {fileID: 1065592420}
   - component: {fileID: 1065592421}
   - component: {fileID: 1065592422}
+  - component: {fileID: 1065592423}
   m_Layer: 0
   m_Name: Sound Cube
   m_TagString: Untagged
@@ -4578,7 +4565,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065592415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 389.6, y: 3.1, z: 397}
+  m_LocalPosition: {x: 391.36, y: 2.74, z: 397}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4612,6 +4599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8551d02134b7c48febf41f1f7b4acffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &1065592422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4627,6 +4615,25 @@ MonoBehaviour:
   soundIndex: 0
   sm: {fileID: 980357932}
   location: {fileID: 1548502565}
+--- !u!95 &1065592423
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065592415}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad8fff63f0ebb434f8b2bb1dffa7e1e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1078222960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6476,8 +6483,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561947323}
-  m_LocalRotation: {x: 0.012196902, y: 0.97336227, z: 0.053320806, w: -0.22265238}
-  m_LocalPosition: {x: 497.42627, y: -28.5, z: 624.2723}
+  m_LocalRotation: {x: 0.008689908, y: 0.98665094, z: 0.056184217, w: -0.15260348}
+  m_LocalPosition: {x: 496.4344, y: -26.472057, z: 624.6861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2078356824}

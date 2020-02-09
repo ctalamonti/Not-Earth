@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class SoundTrigger : TriggerBase
 {
+    private bool sound = true;
     protected override void DoAction()
     {
-        sm.SetClip(soundIndex);
-        sm.PlaySound(location.position);
+        if (sound)
+        {
+            sm.SetClip(soundIndex);
+            sm.PlaySound(location.position);
+            sound = false; 
+
+        }
+       
     }
     public int soundIndex;
     public SoundManager sm;
