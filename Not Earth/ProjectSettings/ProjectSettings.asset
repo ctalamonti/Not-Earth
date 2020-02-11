@@ -150,7 +150,7 @@ PlayerSettings:
       dashSupport: 1
       lowOverheadMode: 0
       protectedContext: 0
-      v2Signing: 0
+      v2Signing: 1
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   enableFrameTimingStats: 0
@@ -335,7 +335,7 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Enabled: 1
     m_Devices:
-    - OpenVR
+    - Oculus
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   openGLRequireES32: 0
