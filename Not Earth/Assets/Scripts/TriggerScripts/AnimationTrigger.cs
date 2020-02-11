@@ -6,13 +6,14 @@ public class AnimationTrigger : TriggerBase
 {
     public string animName;
     Animator anim;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
     }
 
     protected override void DoAction()
-    {   
-        anim.Play(animName);
+    {
+        anim.SetBool(animName, true);
     }
 }

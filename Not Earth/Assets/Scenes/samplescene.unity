@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37056926, g: 0.18914427, b: 0.14781494, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -371,7 +371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.008689908
+      value: 0.008689904
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.y
@@ -379,11 +379,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.056184217
+      value: 0.056184195
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.15260348
+      value: -0.15260345
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 126d619cf4daa52469682f85c1378b4a, type: 3}
       propertyPath: m_RootOrder
@@ -4489,6 +4489,7 @@ GameObject:
   - component: {fileID: 1065592420}
   - component: {fileID: 1065592421}
   - component: {fileID: 1065592422}
+  - component: {fileID: 1065592424}
   - component: {fileID: 1065592423}
   m_Layer: 0
   m_Name: Sound Cube
@@ -4634,6 +4635,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1065592424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065592415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 513d447c951c2492a8f1ad4d526f626d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animName: Hit
 --- !u!1001 &1078222960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6483,7 +6497,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561947323}
-  m_LocalRotation: {x: 0.008689908, y: 0.98665094, z: 0.056184217, w: -0.15260348}
+  m_LocalRotation: {x: 0.008689904, y: 0.98665094, z: 0.056184195, w: -0.15260345}
   m_LocalPosition: {x: 496.4344, y: -26.472057, z: 624.6861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
