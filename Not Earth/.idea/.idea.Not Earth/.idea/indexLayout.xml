@@ -40,6 +40,7 @@
       <Path>.idea</Path>
       <Path>.vs</Path>
       <Path>App</Path>
+      <Path>Asset Bundles</Path>
       <Path>Library</Path>
       <Path>LocalPackages</Path>
       <Path>Logs</Path>

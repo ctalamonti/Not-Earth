@@ -15,17 +15,21 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+        // Sets a bool if both stick buttons are pressed at the same time
+        bool startRide = OVRInput.Get(OVRInput.Button.PrimaryThumbstick) &&
+                         OVRInput.Get(OVRInput.Button.SecondaryThumbstick);
+        
         // Starts or stops boat movement
         // TODO: Get starting onto a timer/player controlled
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || startRide)
         {
             BoatMovement.isMoving = !BoatMovement.isMoving;
         }
 
         // Sets a bool if the triggers are pushed down far enough
         bool triggerPushed =
-            (OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger) > snapshotThreshold) ||
-            (OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger) > snapshotThreshold);
+            (OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > snapshotThreshold) ||
+            (OVRInput.Get(OVRInput.Axis1D.SecondaryIndexTrigger) > snapshotThreshold);
 
         // Takes the screenshot
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || triggerPushed)
@@ -65,7 +69,7 @@ public class GameManager : MonoBehaviour
         ScreenshotHelper.SetRenderMode(ScreenshotHelper.RenderMode.OnUpdateRender);
         // Actually takes the screenshot
         ScreenshotHelper.iCaptureWithCamera(screenshotCamera);
-        screenshotCamera.gameObject.SetActive(false);
+        //screenshotCamera.gameObject.SetActive(false);
     }
 
    

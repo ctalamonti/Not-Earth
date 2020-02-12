@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Net;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityGoogleDrive;
 using UnityGoogleDrive.Data;
@@ -40,7 +39,7 @@ public class SnapshotUploader : MonoBehaviour
     {
         // Increment the screenshot count
         ++screenshotCount;
-        Debug.Log("Screemshot Count: " + screenshotCount);
+        Debug.Log("Screenshot Count: " + screenshotCount);
         // Prevent the first, grey screenshot form being uploaded
         if (screenshotCount == 0) return;
         Debug.Log("Attempting upload");
