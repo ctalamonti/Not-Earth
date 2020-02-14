@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         // Sets what will happen when the screenshot is taken
         ScreenshotHelper.iSetMainOnCapturedCallback((Texture2D texture2d) => {
             FilePathName fpn = new FilePathName();
-            string fileName = fpn.SaveTextureAs(texture2d, FilePathName.AppPath.PersistentDataPath, "Snapshots", false);
+            string fileName = fpn.SaveTextureAs(texture2d, FilePathName.AppPath.TemporaryCachePath, "Snapshots", false);
             byte[] bytes = fpn.ReadFileToBytes(fileName);
             SnapshotUploader.UploadScreenshot(bytes);
             fpn.DeleteFile(fileName);

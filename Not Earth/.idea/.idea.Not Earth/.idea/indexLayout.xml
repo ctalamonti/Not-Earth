@@ -3,6 +3,7 @@
   <component name="ContentModelUserStore">
     <attachedFolders />
     <explicitIncludes>
+      <Path>Assets</Path>
       <Path>Library/PackageCache/com.elringus.unitygoogledrive@fcdab032f47a108db528c618fd2d5ba98d9fd652</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.3.4</Path>
       <Path>Library/PackageCache/com.unity.cinemachine@2.3.5-preview.3</Path>

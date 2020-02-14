@@ -22,10 +22,10 @@ MonoBehaviour:
     redirect_uris:
     - http://localhost
   uriSchemeClientCredentials:
-    clientId: 1072089098540-u9kju343mnju1g1qku8g6324onklkrbd.apps.googleusercontent.com
-    reversedClientId: 
-    plistVersion: 
-    bundleId: 
+    clientId: 1072089098540-8vc1a6l2d903s3n9sp1voud9ieh3g3jr.apps.googleusercontent.com
+    reversedClientId: com.googleusercontent.apps.1072089098540-8vc1a6l2d903s3n9sp1voud9ieh3g3jr
+    plistVersion: 1
+    bundleId: com.teamsis.notearth
   accessScopes:
   - https://www.googleapis.com/auth/drive
   - https://www.googleapis.com/auth/drive.appdata
