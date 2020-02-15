@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Auri\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Auri\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Not Earth.-1843058246.00" t="ExcludeRecursive" />
-    <e p="H:\Bradley\2019-2020\Not-Earth\Not Earth" t="IncludeRecursive">
+    <e p="C:\Users\swift\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\swift\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Not Earth.45350355.00" t="ExcludeRecursive" />
+    <e p="C:\Users\swift\Documents\GitHub\Not-Earth\Not Earth" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -11,6 +11,10 @@
           <e p="Instant Screenshot" t="Include">
             <e p="ScreenshotTaker.cs" t="Include" />
           </e>
+        </e>
+        <e p="Examples" t="Include">
+          <e p="license.txt" t="Include" />
+          <e p="S3Example.cs" t="Include" />
         </e>
         <e p="Libraries" t="Include">
           <e p="SWAN Dev" t="Include">
@@ -770,6 +774,20 @@
               <e p="SimpleJSON.cs" t="Include" />
               <e p="SimpleJSONUnity.cs" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="Packages" t="Include">
+          <e p="Octokit.0.40.0" t="Include">
+            <e p="lib" t="Include">
+              <e p="netstandard2.0" t="Include">
+                <e p="Octokit.xml" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="PlayServicesResolver" t="Include">
+          <e p="Editor" t="Include">
+            <e p="play-services-resolver_v1.2.135.0.txt" t="Include" />
           </e>
         </e>
         <e p="Samples" t="Include">

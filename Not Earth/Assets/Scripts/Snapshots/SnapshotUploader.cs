@@ -1,14 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Collections.Generic;
+using System.IO;
+using Amazon.Runtime;
+using Amazon.S3;
+using Amazon.S3.Model;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityGoogleDrive;
-using UnityGoogleDrive.Data;
- 
+
 
 public class SnapshotUploader : MonoBehaviour
 {
     //TeamDrive drive = new TeamDrive();
+
+    private static AmazonS3Client client;
     
     /// <summary>
     /// How many screenshots have been taken so far 
@@ -17,6 +21,8 @@ public class SnapshotUploader : MonoBehaviour
     void Start()
     {
         screenshotCount = -1;
+        AWSCredentials credentials = new BasicAWSCredentials("", "");
+        client = new AmazonS3Client(credentials);
         //TODO: Get this working with team drives.
         /*
         GoogleDriveTeamDrives.ListRequest request = GoogleDriveTeamDrives.List();
@@ -44,6 +50,10 @@ public class SnapshotUploader : MonoBehaviour
         if (screenshotCount == 0) return;
         Debug.Log("Attempting upload");
         // Creates the file object to be uploaded
+        FileStream fileStream =
+            File.Create("Screenshot" + screenshotCount + ".png");
+        fileStream.Write(toUpload, 0, 0);
+        PostObject("Screenshot" + screenshotCount + ".png");
         var file = new UnityGoogleDrive.Data.File { Name = "Screenshot" + screenshotCount + ".png", Content = toUpload };
         Debug.Log("Sending request");
         // Sets the folder the file needs to go into
@@ -80,5 +90,40 @@ public class SnapshotUploader : MonoBehaviour
         var folder = request.Send();
        // Debug.Log(folder.GoogleDriveRequest.);// sending folder to drive
         //return folder.GoogleDriveRequest.ResponseData.Id;  // requesting id
+    }
+    
+    private static void PostObject(string fileName)
+    {
+        Debug.Log("Retrieving the file");
+
+        var stream = new FileStream(Application.persistentDataPath +
+                                    Path.DirectorySeparatorChar + fileName,
+            FileMode.Open, FileAccess.Read, FileShare.Read);
+
+        Debug.Log("Creating request object");
+        var request = new PostObjectRequest()
+        {
+            Bucket = "notearth",
+            Key = fileName,
+            InputStream = stream,
+            CannedACL = S3CannedACL.Private
+        };
+
+        Debug.Log("Making HTTP post call");
+        
+        client.PostObjectAsync(request, (responseObj) =>
+        {
+            if (responseObj.Exception == null)
+            {
+                Debug.Log(string.Format("\nobject {0} posted to bucket {1}",
+                    responseObj.Request.Key, responseObj.Request.Bucket));
+            }
+            else
+            {
+                Debug.Log("Exception while posting the result object");
+                Debug.Log(string.Format("\n receieved error {0}" +
+                    responseObj.Response.HttpStatusCode.ToString()));
+            }
+        });
     }
 }
