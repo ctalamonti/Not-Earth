@@ -429,8 +429,8 @@ PlayerSettings:
     m_Enabled: 1
     m_Devices:
     - Oculus
-  openGLRequireES31: 0
-  openGLRequireES31AEP: 0
+  openGLRequireES31: 1
+  openGLRequireES31AEP: 1
   openGLRequireES32: 0
   m_TemplateCustomTags: {}
   mobileMTRendering:

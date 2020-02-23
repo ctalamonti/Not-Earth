@@ -12,10 +12,6 @@
             <e p="ScreenshotTaker.cs" t="Include" />
           </e>
         </e>
-        <e p="Examples" t="Include">
-          <e p="license.txt" t="Include" />
-          <e p="S3Example.cs" t="Include" />
-        </e>
         <e p="Libraries" t="Include">
           <e p="SWAN Dev" t="Include">
             <e p="Common" t="Include">
@@ -40,6 +36,97 @@
                 <e p="ScreenshotDemo.cs" t="Include" />
                 <e p="ScreenshotHelper.cs" t="Include" />
               </e>
+            </e>
+          </e>
+        </e>
+        <e p="LuxWater" t="Include">
+          <e p="Changelog.txt" t="Include" />
+          <e p="Demos" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="ZwriteFont.shader" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="LuxWater_ExtendedFlycam.cs" t="Include" />
+              <e p="LuxWater_SetToGerstnerHeight.cs" t="Include" />
+              <e p="LuxWater_WaterVolumeListener.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="WavingGrass.shader" t="Include" />
+            </e>
+          </e>
+          <e p="FogShaders" t="Include">
+            <e p="readme.txt" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="LuxWater_CameraDepthModeEditor.cs" t="Include" />
+              <e p="LuxWater_GFDrawer.cs" t="Include" />
+              <e p="LuxWater_HelpDrawer.cs" t="Include" />
+              <e p="LuxWater_MaterialEditor.cs" t="Include" />
+              <e p="LuxWater_MinMaxSliderDrawer.cs" t="Include" />
+              <e p="LuxWater_VectorFourDrawer.cs" t="Include" />
+              <e p="LuxWater_VectorFourGFDrawer.cs" t="Include" />
+              <e p="LuxWater_VectorThreeDrawer.cs" t="Include" />
+              <e p="LuxWater_VectorThreeDrawerNoSpace.cs" t="Include" />
+              <e p="LuxWater_VectorTwoDrawer.cs" t="Include" />
+            </e>
+            <e p="LuxWater_CameraDepthMode.cs" t="Include" />
+            <e p="LuxWater_HelpBtn.cs" t="Include" />
+            <e p="LuxWater_InfiniteOcean.cs" t="Include" />
+            <e p="LuxWater_PlanarReflection.cs" t="Include" />
+            <e p="LuxWater_PlanarWaterTile.cs" t="Include" />
+            <e p="LuxWater_Projector.cs" t="Include" />
+            <e p="LuxWater_ProjectorRenderer.cs" t="Include" />
+            <e p="LuxWater_UnderWaterBlur.cs" t="Include" />
+            <e p="LuxWater_UnderWaterRendering.cs" t="Include" />
+            <e p="LuxWater_UnderwaterRenderingSlave.cs" t="Include" />
+            <e p="LuxWater_WaterVolume.cs" t="Include" />
+            <e p="LuxWater_WaterVolumeTrigger.cs" t="Include" />
+            <e p="Utils" t="Include">
+              <e p="LuxWater_SetMeshBounds.cs" t="Include" />
+              <e p="LuxWater_Utils.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Includes" t="Include">
+              <e p="LuxUnderwater_PBSLighting.cginc" t="Include" />
+              <e p="LuxWater_Core.cginc" t="Include" />
+              <e p="LuxWater_GerstnerWaves.cginc" t="Include" />
+              <e p="LuxWater_PBSLighting.cginc" t="Include" />
+              <e p="LuxWater_Setup.cginc" t="Include" />
+              <e p="LuxWater_Tess.cginc" t="Include" />
+              <e p="LuxWater_UnderwaterParticleFog.cginc" t="Include" />
+              <e p="LuxWater_Utils.cginc" t="Include" />
+            </e>
+            <e p="LuxWater CG Tessellation.shader" t="Include" />
+            <e p="LuxWater CG.shader" t="Include" />
+            <e p="Particles" t="Include">
+              <e p="Lux Like Premultiply Blend.shader" t="Include" />
+              <e p="Lux Underwater Add.shader" t="Include" />
+              <e p="Lux Underwater Alpha Blended.shader" t="Include" />
+            </e>
+            <e p="Projectors" t="Include">
+              <e p="LuxWater_FoamProjector.shader" t="Include" />
+              <e p="LuxWater_NormalProjector.shader" t="Include" />
+            </e>
+            <e p="Resources" t="Include">
+              <e p="DeferredLighting" t="Include">
+                <e p="LuxWater_DeferredLibrary non-optimized.cginc" t="Include" />
+                <e p="LuxWater_DeferredLibrary.cginc" t="Include" />
+                <e p="LuxWater_DeferredShading.shader" t="Include" />
+              </e>
+              <e p="LuxWater_BlurEffectConeTaps.shader" t="Include" />
+              <e p="LuxWater_CopyDepth.shader" t="Include" />
+              <e p="LuxWater_Debug.shader" t="Include" />
+              <e p="LuxWater_DebugNormals.shader" t="Include" />
+              <e p="LuxWater_UnderWaterPost.shader" t="Include" />
+              <e p="LuxWater_WaterMask.shader" t="Include" />
+              <e p="LuxWater_WaterMaskNoTess.shader" t="Include" />
+            </e>
+            <e p="Transparent Underwater" t="Include">
+              <e p="LuxUnderwater LightBeam.shader" t="Include" />
+              <e p="LuxUnderwater Transparent Blend.shader" t="Include" />
+              <e p="LuxUnderwater Transparent Premultiply.shader" t="Include" />
             </e>
           </e>
         </e>
@@ -773,15 +860,6 @@
               <e p="openvr_api.cs" t="Include" />
               <e p="SimpleJSON.cs" t="Include" />
               <e p="SimpleJSONUnity.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Packages" t="Include">
-          <e p="Octokit.0.40.0" t="Include">
-            <e p="lib" t="Include">
-              <e p="netstandard2.0" t="Include">
-                <e p="Octokit.xml" t="Include" />
-              </e>
             </e>
           </e>
         </e>
