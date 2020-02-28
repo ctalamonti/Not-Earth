@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: dd154d54cecca3b4185ac69784bc66d0
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _VectorNoise: {fileID: 2800000, guid: e599085520e3b1d4abb25fa7adb812eb, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
