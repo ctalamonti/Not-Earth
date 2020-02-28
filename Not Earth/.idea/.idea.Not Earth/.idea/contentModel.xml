@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\swift\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\swift\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Not Earth.45350355.00" t="ExcludeRecursive" />
-    <e p="C:\Users\swift\Documents\GitHub\Not-Earth\Not Earth" t="IncludeRecursive">
+    <e p="C:\Users\Auri\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Auri\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Not Earth.-1843058246.00" t="ExcludeRecursive" />
+    <e p="H:\Bradley\2019-2020\Not-Earth\Not Earth" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Alien Fantasy Forest" t="Include">
+          <e p="HDRP info.txt" t="Include" />
+          <e p="Shaders" t="Include">
+            <e p="MK4 Foliage no wind.shader" t="Include" />
+            <e p="MK4 Foliage simple.shader" t="Include" />
+            <e p="MK4 Foliage.shader" t="Include" />
+            <e p="Rock_cover.shader" t="Include" />
+          </e>
+          <e p="Terrain" t="Include">
+            <e p="Editor" t="Include">
+              <e p="ReplaceSplatmap2.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Editor" t="Include">
           <e p="Instant Screenshot" t="Include">
             <e p="ScreenshotTaker.cs" t="Include" />

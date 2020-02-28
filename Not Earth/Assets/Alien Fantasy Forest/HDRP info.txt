@@ -1,0 +1,5 @@
+Warning
+Attached HDRP files work on Unity 2019.1 or newer.
+The attached materials replace most of the standard ones, it is recommended to make a copy of the current materials
+
+HDRP files require the latest version of HD Render Pipeline and Postprocessing
