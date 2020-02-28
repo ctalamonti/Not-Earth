@@ -28070,7 +28070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8551d02134b7c48febf41f1f7b4acffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settingMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &1065592422
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         // Reload the scene to restart the game
         if (resetLevel)
         {
+            BoatMovement.isMoving = false;
             SceneManager.LoadScene(0);
         }
         
@@ -59,7 +60,7 @@ public class GameManager : MonoBehaviour
         // Takes the screenshot
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || triggerPushed)
         {
-            TakeScreenshot();
+            //TakeScreenshot();
         }
     }
     private void Awake()
