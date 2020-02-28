@@ -25,7 +25,7 @@ MonoBehaviour:
     clientId: 1072089098540-8vc1a6l2d903s3n9sp1voud9ieh3g3jr.apps.googleusercontent.com
     reversedClientId: com.googleusercontent.apps.1072089098540-8vc1a6l2d903s3n9sp1voud9ieh3g3jr
     plistVersion: 1
-    bundleId: com.teamsis.notearth
+    bundleId: com.teamsix.notearth
   accessScopes:
   - https://www.googleapis.com/auth/drive
   - https://www.googleapis.com/auth/drive.appdata
