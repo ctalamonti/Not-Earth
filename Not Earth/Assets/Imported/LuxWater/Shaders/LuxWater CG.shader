@@ -213,6 +213,7 @@ Properties {
 			Blend SrcAlpha OneMinusSrcAlpha
 
 			CGPROGRAM
+			//#extension GL_OVR_multiview2 : enable
 			#pragma target 3.0
 			#pragma multi_compile_fwdbase
 			#ifndef UNITY_PASS_FORWARDBASE
@@ -254,6 +255,32 @@ Properties {
 			#pragma shader_feature EFFECT_BUMP
 
 			
+			/*
+			struct v2f {
+                float2 uv : TEXCOOR0;
+                float4 vertex : SV_POSITION;
+                UNITY_VERTEX_OUTPUT_STEREO
+            }
+			
+			v2f vert (appdata v)
+            {
+                v2f o;
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                o.vertex = UnityObjectToClipPos(v.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                return o;
+            }
+			
+			fixed4 frag (v2f i) : SV_Target
+            {
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+                // sample the texture
+                fixed4 col = tex2D(_MainTex, i.uv);
+                // apply fog
+                UNITY_APPLY_FOG(i.fogCoord, col);
+                return col;
+            }
+			*/
 	        #pragma vertex vert
             #pragma fragment frag
 

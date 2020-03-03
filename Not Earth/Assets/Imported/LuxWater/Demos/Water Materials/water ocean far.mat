@@ -9,8 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: water ocean far
   m_Shader: {fileID: 4800000, guid: ab6f7521bd72644388f2fc1112e74e7b, type: 3}
-  m_ShaderKeywords: GEOM_TYPE_BRANCH GEOM_TYPE_LEAF LUX_WATER_REFLECTIVE _PIXELSNAP_NONE
-    _SNAPPING _WORLDSPACEMAPPINGENABLED_ON
+  m_ShaderKeywords: GEOM_TYPE_BRANCH GEOM_TYPE_BRANCH_DETAIL GEOM_TYPE_LEAF LUX_WATER_REFLECTIVE
+    _PIXELSNAP_NONE _SNAPPING _WORLDSPACEMAPPINGENABLED_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -67,7 +67,7 @@ Material:
     - _DetailFadeRange: 500
     - _FinalFogDensity: 0
     - _FoamCaps: 0.38
-    - _FoamEnabled: 0
+    - _FoamEnabled: 1
     - _FoamNormalMaskScale: 5
     - _FoamNormalScale: 0.13
     - _FoamParallax: 0.03
