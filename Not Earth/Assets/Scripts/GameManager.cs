@@ -67,9 +67,12 @@ public class GameManager : MonoBehaviour
     {
         //SnapshotUploader.CreateFolder("Photos");
 
+        // Turns on Fixed Foveated Rendering - bluring the edges of the screen
+        OVRManager.fixedFoveatedRenderingLevel = OVRManager.FixedFoveatedRenderingLevel.HighTop;
+        
         // Sets the Quest's power to max
-        OVRManager.cpuLevel = 2;
-        OVRManager.gpuLevel = 2;
+        OVRManager.cpuLevel = 4;
+        OVRManager.gpuLevel = 4;
 
         // Takes a picture using the blank callback so the camera shown to the spectators and screenshotted from is correct.
         // There is a better way to do this, but I do not know it. Just delete the obviously incorrect photo (it is just plain grey)
