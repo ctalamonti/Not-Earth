@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         //SnapshotUploader.CreateFolder("Photos");
 
         // Turns on Fixed Foveated Rendering - bluring the edges of the screen
-        OVRManager.fixedFoveatedRenderingLevel = OVRManager.FixedFoveatedRenderingLevel.HighTop;
+        OVRManager.fixedFoveatedRenderingLevel = OVRManager.FixedFoveatedRenderingLevel.High;
         
         // Sets the Quest's power to max
         OVRManager.cpuLevel = 4;
